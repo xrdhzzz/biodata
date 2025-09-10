@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata - Muhammad Ridho Umami</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #160505e2 0%, #020004 100%);
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .card {
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            animation: slideIn 0.8s ease-out;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px) scale(0.9); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .skill-bar {
+            height: 12px;
+            border-radius: 6px;
+            background: linear-gradient(90deg, #000000 0%, #ff0000 100%);
+            transition: width 2s ease-in-out;
+            width: 0%;
+        }
+        .animate-bar { width: var(--percentage); }
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(255, 1, 1, 0.5);
+            transform: translateY(-5px);
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto p-5 max-w-4xl">
+        <!-- Header Section -->
+        <div class="flex justify-center mb-10">
+            <div class="card p-8 max-w-md text-center text-white hover-glow">
+                <div class="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full border-4 border-white shadow-lg">
+                    <img src="/img/WhatsApp Image 2025-09-10 at 06.50.46.jpeg" alt="Portrait of a professional with a warm smile, wearing a formal jacket against a blurred office backdrop, conveying confidence and expertise in technology and design" class="w-full h-full object-cover" onerror="this.style.display='none';" />
+                </div>
+                <h1 class="text-3xl font-bold mb-2">Muhammad Ridho Umami</h1>
+                <p class="text-lg opacity-90 mb-4">Pelajar</p>
+                <button class="toggle-btn bg-white bg-opacity-20 px-4 py-2 rounded-full text-sm transition-all hover:bg-opacity-30" onclick="toggleSection('about')">Klik untuk Lihat Deskripsi</button>
+                <div id="about" class="hidden mt-4 leading-relaxed text-justify opacity-80">
+                    Halo! Saya adalah seseorang yang suka belajar tentang jaringan  dan  dll
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills and Experience -->
+        <div class="grid md:grid-cols-2 gap-6 mb-10">
+            <div class="card p-6 text-white hover-glow">
+                <h2 class="text-2xl font-semibold mb-4">Keterampilan Utama</h2>
+                <ul class="space-y-4">
+                    <li>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm">HTML/CSS</span>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-full p-1">
+                            <div class="skill-bar animate-bar" style="--percentage: 10%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm">JavaScript</span>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-full p-1">
+                            <div class="skill-bar animate-bar" style="--percentage: 1%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm">Css</span>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-full p-1">
+                            <div class="skill-bar animate-bar" style="--percentage: 5%;"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm">Binary Exploit</span>
+                        </div>
+                        <div class="bg-white bg-opacity-20 rounded-full p-1">
+                            <div class="skill-bar animate-bar" style="--percentage: 25%;"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card p-6 text-white hover-glow">
+                <h2 class="text-2xl font-semibold mb-4">Pengalaman</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-bold text-lg">SMK HARAPAN BANGSA [PELAJAR]</h3>
+                        <p class="opacity-75">Tahun 2023-2026 </p>
+                        <p class="opacity-75">Bertanggung jawab Untuk belajar</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">PT JAYA CIPTA DIGITAL [PKL]</h3>
+                        <p class="opacity-75">Tahun 2025</p>
+                        <p class="opacity-75">Bertanggung jawab kalau ada trabel di client</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer/Contact -->
+        <div class="text-center card p-6 text-white mb-5 hover-glow">
+            <h2 class="text-2xl font-semibold mb-4">Kontak & Sosial Media</h2>
+            <p>Email: <a href="mailto:[email Anda]" class="underline hover:text-blue-300"> idoonux2@gmail.com</a> | Telepon: -</p>
+            <p class="mt-2">GitHub: xrdhzzz | LinkedIn: Muhammad Ridho Umami | Portfolio: -</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            section.classList.toggle('hidden');
+        }
+        
+        // Trigger skill bar animation on load with delay
+        window.addEventListener('load', () => {
+            const bars = document.querySelectorAll('.skill-bar');
+            let delay = 0;
+            bars.forEach((bar, index) => {
+                setTimeout(() => bar.classList.add('animate-bar'), delay);
+                delay += 300;
+            });
+        });
+    </script>
+</body>
+</html>
